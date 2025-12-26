@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuộc Đua Sao Đỏ 2025</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Bangers&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="race_style.css">
+</head>
+
+<body>
+    <div class="sky">
+        <div class="cloud cloud-1"></div>
+        <div class="cloud cloud-2"></div>
+    </div>
+
+    <div class="race-container">
+        <div id="start-overlay" class="start-overlay">
+            <button id="start-btn" class="start-button">BẮT ĐẦU ĐUA! 🐎🏁</button>
+        </div>
+
+        <div class="header-board">
+            <h1>CUỘC ĐUA SAO ĐỎ 2025</h1>
+            <div class="time-display" id="time-display">Chờ xuất phát...</div>
+        </div>
+
+        <div class="track" id="track">
+            <!-- Horses will be injected here -->
+        </div>
+
+        <div class="ground"></div>
+    </div>
+
+    <audio id="bg-music" loop>
+        <source src="nhac.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="race_data.js"></script>
+    <script src="race_script.js"></script>
+</body>
+
+</html>
