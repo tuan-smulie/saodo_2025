@@ -26,8 +26,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const horseElements = {};
 
-    // Create 10 background lanes
-    for (let i = 0; i < 10; i++) {
+    // Create background lanes for all participants
+    const participantCount = allParticipants.size;
+    track.style.height = `${participantCount * 50}px`;
+    for (let i = 0; i < participantCount; i++) {
         const laneBg = document.createElement('div');
         laneBg.className = 'lane';
         laneBg.style.top = `${i * 50}px`;
@@ -88,13 +90,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         currentValues.forEach((item, rank) => {
             const el = horseElements[item.name];
-            if (rank < 10 && item.val > 0) {
+            if (item.val >= 0) { // Show all even with 0 value if needed, or item.val > 0
                 el.style.display = 'flex';
                 el.style.top = `${rank * 50 + 5}px`;
                 const percent = (item.val / globalMax) * 90;
                 el.style.left = `${percent}%`;
                 el.querySelector('.val').innerText = Math.round(item.val) + 'k';
-                el.style.zIndex = 100 - rank;
+                el.style.zIndex = 200 - rank; // Increased z-index range
                 el.style.transition = 'top 0.5s ease';
             } else {
                 el.style.display = 'none';
